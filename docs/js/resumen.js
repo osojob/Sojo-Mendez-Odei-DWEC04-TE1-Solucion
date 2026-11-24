@@ -39,7 +39,7 @@ function pintarRanking(series) {
         
         // Creamos las filas y metemos los datos
         filasHTML += `
-            <tr onclick="window.location.href='detalle.html?id=${serie.id}&nombre=${encodeURIComponent(serie.name)}'" style="cursor: pointer;">
+            <tr onclick="window.location.href='pages/detalle.html?id=${serie.id}&nombre=${encodeURIComponent(serie.name)}'" style="cursor: pointer;">
                 <td class="puesto">${indice + 1}</td>
                 <td>
                     <div class="serie">

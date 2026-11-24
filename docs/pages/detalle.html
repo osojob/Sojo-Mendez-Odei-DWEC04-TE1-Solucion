@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TV Manic - Series</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="contenedor">
+                <h1>TV Manic</h1>
+                <p>Detalle de la serie</p>
+            </div>
+        </header>
+
+        <main>
+            <a href="../index.html" class="btn-volver">← Volver al ranking</a>
+            <br>
+            <br>
+            <section class="panel">
+                <div class="panel-cabecera">
+                    <h2 id="titulo-serie">Cargando...</h2>
+                </div>
+                
+                <div class="grafico-container">
+                    <canvas id="grafico-temporadas"></canvas>
+                </div>
+            </section>
+
+            <section class="panel panel-info">
+                <div class="panel-cabecera">
+                    <h2>Información de la serie</h2>
+                </div>
+                <div class="info-contenido">
+                    <img id="poster-serie" src="" alt="Póster" class="poster">
+                    <p id="sinopsis-serie" class="sinopsis"></p>
+                </div>
+            </section>
+
+            <section class="panel panel-elenco">
+                <div class="panel-cabecera">
+                    <h2>Reparto principal</h2>
+                </div>
+                <div id="elenco-serie" class="elenco-grid">
+                </div>
+            </section>
+        </main>
+
+        <script src="../js/service/series-service.js"></script>
+        <script src="../js/detalle.js"></script>
+    </body>
+</html>
