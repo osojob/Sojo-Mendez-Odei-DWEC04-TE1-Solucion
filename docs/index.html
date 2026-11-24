@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TV Manic - Ranking de artistas</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="contenedor">
+                <h1>TV Manic</h1>
+                <p>Ranking de series en tendencia</p>
+            </div>
+        </header>
+
+        <main>
+            <div id="cargando" class="aviso">Cargando artistas...</div>
+            <div id="error" class="aviso" hidden>Ha ocurrido un error al cargar los datos. Inténtalo de nuevo.</div>
+            
+            <section>
+                <div class="panel-cabecera">
+                    <div>
+                        <h2>Ranking de Series</h2>
+                        <p>Ranking de series de televisión.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="tabla-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Serie</th>
+                                    <th>Año de estreno</th>
+                                    <th>Nota media</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ranking">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <script src="js/service/series-service.js">
+        </script>
+        <script src="js/resumen.js"></script>
+    </body>
+</html>
