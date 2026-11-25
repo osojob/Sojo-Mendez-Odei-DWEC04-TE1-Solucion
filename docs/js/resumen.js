@@ -64,13 +64,12 @@ function pintarRanking(series) {
         filasHTML += `
             <tr onclick="window.location.href='pages/detalle.html?id=${serie.id}&nombre=${encodeURIComponent(serie.name)}'" style="cursor: pointer;">
                 <td class="puesto">${inicio + indice + 1}</td>
+                <td><strong>${serie.name}</strong></td>
                 <td>
                     <div class="serie">
-                        <img src="${imagen}" alt=${serie.name}">
-                        <strong>${serie.name}</strong>
+                        <img src="${imagen}" alt=${serie.name}"></td>
                     </div>
-                </td>
-                <td>${año}</td>
+                    <td>${año}</td>
                 <td>${nota}</td>
                 <td>
                     <span class="estrella" onclick="event.stopPropagation(); marcarFavorito(${indice})">${estrella}</span>

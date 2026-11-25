@@ -97,17 +97,19 @@ function calcularNotasPorTemporadas(episodios) {
                 {
                     label: 'Nota media',
                     data: valores,
-                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'rgba(255, 241, 44, 0.64)',
+                    borderColor: 'rgb(248, 248, 29)',
                     borderWidth: 1,
-                    yAxisID: 'y'
+                    yAxisID: 'y',
+                    barPercentage: 0.9,
+                    categoryPercentage: 0.5
                 }, 
                 {
                     label: 'Nº de episodios',
                     data: episodiosPorTemporada,
                     type: 'line',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(191, 20, 174)',
+                    backgroundColor: 'rgba(197, 19, 167, 0.42)',
                     borderWidth: 2,
                     fill: false,
                     yAxisID: 'y1'
@@ -116,18 +118,39 @@ function calcularNotasPorTemporadas(episodios) {
         },
         options: {
             responsive: true,
+            font: {
+                family: '"Space Mono", monospace'
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#f8fafc'
+                    }
+                }
+            },
             scales: {
+                x: {
+                    ticks: {
+                        color: '#f8fafc',
+                        font: {
+                            family: '"Space Mono", monospace',
+                            size: 12
+                        }
+                    }
+                },
                 y: {
+                    ticks: { color: '#f8fafc' },
                     beginAtZero: true,
                     max: 10,
                     position: 'left',
-                    title: { display: true, text: 'Nota' }
+                    title: { display: true, text: 'Nota', color: '#afef1a' }
                 },
                 y1: {
+                    ticks: { color: '#f8fafc' },
                     beginAtZero: true,
                     position: 'right',
                     grid: { drawOnChartArea: false },
-                    title: { display: true, text: 'Episodios' }
+                    title: { display: true, text: 'Episodios', color: '#afef1a' }
                 }
             }
         }

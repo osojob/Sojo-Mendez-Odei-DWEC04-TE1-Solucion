@@ -4,17 +4,41 @@
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    color: #1f2937;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0d13;
+  color: #f8fafc;
+}
+
+/* Fuente personalizada */
+.titulo {
+  font-family: "Sixtyfour", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-size: 40px;
+  font-style: normal;
+  font-variation-settings:
+    "BLED" 0,
+    "SCAN" 0;
+  color: #afef1a;
+}
+
+h2 {
+  font-family: "Space Mono", monospace;
+  font-weight: bold 700;
+  color: #afef1a;
+}
+
+tr, th, p, a, button {
+  font-family: "Quantico", sans-serif;
+  font-weight: bold 700;
 }
 
 /* Cabecera */
 header {
-    background: #0f0d13;
-    color: white;
-    padding: 24px;
+  background: #1a1a1e;
+  padding: 24px;
+  border-bottom: 2px solid #afef1a;
 }
 
 .header-contenido {
@@ -24,25 +48,25 @@ header {
 }
 
 header .contenedor, main {
-    width: min(1100px, calc(100% - 32px));
-    margin: 0 auto;
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
 }
 
 header h1 { margin: 0 0 6px; font-size: 1.8rem; }
-header p { margin: 0; color: #cbd5e1; }
+header p { margin: 0; color: #f8fafc; }
 
 .btn-favoritos {
-    background: #fbbf24; /* Color amarillo/estrella */
-    color: #0f172a;
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.2s;
+  background: #afef1a;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.2s;
 }
 
 .btn-favoritos:hover {
-    background: #f59e0b;
+    background: #86c400;
 }
 
 /* Estructura principal */
@@ -50,8 +74,9 @@ main { padding: 28px 0 50px; }
 
 /* Avisos (cargando, error, etc.) */
 .aviso { 
-  background: #fff8db; 
-  border: 1px solid #eadb8f; 
+  background: #1a1a1e;
+  border: 1px solid #afef1a;
+  color: #f8fafc;
   border-radius: 10px; 
   padding: 12px 16px; 
   margin-bottom: 22px; 
@@ -59,19 +84,19 @@ main { padding: 28px 0 50px; }
 
 /* Panel contenedor de la tabla */
 .panel { 
-  background: white; 
-  border: 1px solid #e5e7eb; 
+  background: #1a1a1e;
+  border: 1px solid #333;
   border-radius: 14px; 
   overflow: hidden; 
 }
 
 .panel-cabecera { 
   padding: 20px; 
-  border-bottom: 1px solid #e5e7eb; 
+  border-bottom: 1px solid #333; 
 }
 
-.panel-cabecera h2 { margin: 0 0 4px; }
-.panel-cabecera p { margin: 0; color: #6b7280; }
+.panel-cabecera h2 { margin: 0 0 4px; color: #afef1a; }
+.panel-cabecera p { margin: 0; color: #94a3b8; }
 
 /* Tabla */
 .tabla-container { overflow-x: auto; }
@@ -80,25 +105,22 @@ table {
   width: 100%; 
   border-collapse: collapse; 
   min-width: 760px; 
+  background-color: #1a1a1e;
 }
 
 th, td { 
   padding: 15px 16px; 
-  text-align: right; 
-  border-bottom: 1px solid #edf0f3; 
+  text-align: center; 
+  border-bottom: 1px solid #333; 
+  color: #f8fafc;
 }
 
 th { 
-  color: #64748b; 
-  background: #fafafa; 
+  color: #afef1a;
+  background: #0f0d13;
   font-size: 0.86rem; 
   text-transform: uppercase; 
   letter-spacing: 0.03em; 
-}
-
-th:first-child, td:first-child, 
-th:nth-child(2), td:nth-child(2) { 
-  text-align: left; 
 }
 
 /* Paginación */
@@ -108,27 +130,30 @@ th:nth-child(2), td:nth-child(2) {
   align-items: center;
   gap: 20px;
   padding: 20px;
-  background: white;
-  border-top: 1px solid #e5e7eb;
+  background: #1a1a1e;
+  border-top: 1px solid #333;
 }
 
 .paginacion button {
   padding: 8px 16px;
-  background: #0f172a;
-  color: white;
+  background: #afef1a;
+  color: black;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .paginacion button:disabled {
-  background: #cbd5e1;
+  background: #333;
+  color: #666;
   cursor: not-allowed;
 }
 
 .paginacion span {
   font-weight: bold;
-  color: #64748b;
+  color: #94a3b8;
+  font-family: "Space Mono", monospace;
 }
 
 /* Favoritos */
@@ -140,36 +165,40 @@ th:nth-child(2), td:nth-child(2) {
 }
 
 .favorito-card {
-  background: white;
+  background: #1a1a1e;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
   text-align: center;
   padding-bottom: 15px;
+  border: 1px solid #333;
 }
 
 .favorito-card:hover {
   transform: translateY(-5px);
+  border-color: #afef1a;
+  box-shadow: 0 6px 16px rgba(175, 239, 26, 0.2);
 }
 
 .favorito-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    margin-bottom: 10px;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .favorito-card strong {
   display: block;
   padding: 0 10px;
   font-size: 1.1rem;
+  color: #f8fafc;
 }
 
 /* Hover para las filas */
 tbody tr { transition: background 0.15s ease; }
-tbody tr:hover { background: #f6f9ff; }
+tbody tr:hover { background: #25252a; }
 
 /* Clases para los datos de la tabla */
 .puesto { font-weight: bold; font-size: 1.1rem; }
@@ -181,16 +210,16 @@ tbody tr:hover { background: #f6f9ff; }
 }
 
 .serie img {
-    width: 40px;
-    height: 55px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 40px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .serie strong { 
     font-size: 1rem; 
-    color: #1f2937;
+    color: #f8fafc;
 }
 
 /* Estilos para la página de detalle */
@@ -213,7 +242,7 @@ tbody tr:hover { background: #f6f9ff; }
 
 .sinopsis {
   line-height: 1.6;
-  color: #4b5563;
+  color: #cbd5e1;
   margin: 0;
 }
 
@@ -222,6 +251,15 @@ tbody tr:hover { background: #f6f9ff; }
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
+}
+
+.elenco-grid span {
+  font-family: "Space Mono", monospace;
+}
+
+.elenco-grid strong{
+  font-family: "Quantico", sans-serif;
 }
 
 .actor-card {
@@ -242,7 +280,7 @@ tbody tr:hover { background: #f6f9ff; }
 
 .actor-card span {
   font-size: 0.85rem;
-  color: #6b7280;
+  color: #94a3b8;
 }
 
 /* Responsive (para móviles) */
