@@ -1,7 +1,7 @@
 // Funcion general que hace el fetch
 async function obtenerDatos(url) {
     try {
-        // Hacemos el fetch de la URL de la API elegida, en mi caso Deezer
+        // Hacemos el fetch de la URL de la API elegida (TVMaze)
         const respuesta = await fetch(url);
 
         // Convertimos la respuesta a JSON

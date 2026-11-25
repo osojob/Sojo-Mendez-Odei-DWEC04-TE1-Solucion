@@ -25,7 +25,7 @@ async function cargarEpisodios() {
 
     elenco.forEach(actor => {
         // Sacamos imagen, nombre y personaje
-        const foto = actor.person.image.medium;
+        const foto = actor.person.image?.medium;
         const nombre = actor.person.name;
         const personaje = actor.character.name;
 
@@ -50,6 +50,7 @@ async function cargarEpisodios() {
 function calcularNotasPorTemporadas(episodios) {
     let etiquetas = [];
     let valores = [];
+    let episodiosPorTemporada = [];
 
     let sumas = {};
     let conteos = {};
@@ -66,15 +67,19 @@ function calcularNotasPorTemporadas(episodios) {
                 conteos[temporada] = 0;
             }
 
-            // Sumamos la nota y contamos uno más
+            // Sumamos la nota y duración
             sumas[temporada] += nota;
             conteos[temporada]++;
         }
     });
 
     for (let temporada in sumas) {
+        // Calculamos notas medias por temporada y redondeamos a 1 decimal
         etiquetas.push("Temporada " + temporada);
         valores.push((sumas[temporada] / conteos[temporada]).toFixed(1));
+
+        // Metemos los episodios por temporada
+        episodiosPorTemporada.push(conteos[temporada]);
     }
 
     // Creamos el gráfico
@@ -88,20 +93,41 @@ function calcularNotasPorTemporadas(episodios) {
         type: 'bar',
         data: {
             labels: etiquetas,
-            datasets: [{
-                label: 'Nota media por temporada',
-                data: valores,
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
+            datasets: [
+                {
+                    label: 'Nota media',
+                    data: valores,
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    yAxisID: 'y'
+                }, 
+                {
+                    label: 'Nº de episodios',
+                    data: episodiosPorTemporada,
+                    type: 'line',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderWidth: 2,
+                    fill: false,
+                    yAxisID: 'y1'
+                }
+            ]
         },
         options: {
             responsive: true,
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 10
+                    max: 10,
+                    position: 'left',
+                    title: { display: true, text: 'Nota' }
+                },
+                y1: {
+                    beginAtZero: true,
+                    position: 'right',
+                    grid: { drawOnChartArea: false },
+                    title: { display: true, text: 'Episodios' }
                 }
             }
         }

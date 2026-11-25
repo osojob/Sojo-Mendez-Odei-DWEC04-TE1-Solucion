@@ -8,9 +8,12 @@
     </head>
     <body>
         <header>
-            <div class="contenedor">
-                <h1>TV Manic</h1>
-                <p>Catálogo de series</p>
+            <div class="contenedor header-contenido">
+                <div>
+                    <h1>TV Manic</h1>
+                    <p>Catálogo de series</p>
+                </div>
+                <a href="pages/favoritos.html" class="btn-favoritos">★ Mis favoritos</a>
             </div>
         </header>
 
@@ -35,12 +38,19 @@
                                     <th>Serie</th>
                                     <th>Año de estreno</th>
                                     <th>Nota media</th>
+                                    <th>Favorito</th>
                                 </tr>
                             </thead>
                             <tbody id="ranking">
 
                             </tbody>
                         </table>
+                        
+                        <div class="paginacion">
+                            <button id="btn-anterior">← Anterior</button>
+                            <span id="info-pagina">Página 1</span>
+                            <button id=btn-siguiente>Siguiente →</button>
+                        </div>
                     </div>
                 </div>
 

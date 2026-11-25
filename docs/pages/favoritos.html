@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TV Manic - Mis Favoritos</title>
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="contenedor">
+                <h1>TV Manic</h1>
+                <p>Tus series favoritas</p>
+            </div>
+        </header>
+
+        <main>
+            <a href="../index.html" class="btn-volver">← Volver al ranking</a>
+
+            <div id="lista-favoritos" class="favoritos-grid">
+            </div>
+
+            <p id="sin-favoritos" hidden>Todavía no tienes series favoritas.</p>
+        </main>
+
+        <script src="../js/service/series-service.js"></script>
+        <script src="../js/favoritos.js"></script>
+    </body>
+</html>
